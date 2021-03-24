@@ -1,0 +1,249 @@
+.art_realtime_text{
+	height: 300px;
+	max-height: 40vh !important;
+	min-height: 200px !important;
+	border: 1px solid rgba(0,0,0,0.4);
+	//position: absolute;
+	//top: 86px;
+	background: white;
+	overflow-y: auto;
+}
+#editMode{
+	display: none;
+}
+.art_realtime_text{
+	*{
+		width: auto;
+		height: auto;
+		max-height: auto;
+		max-width: auto;
+	}
+}
+.art_realtime_text pre{
+	padding: 0;
+	background: white;
+	margin: 0;
+	background-color: white;
+	border: none;border-radius: 0;
+	display: block;
+	overflow: visible;
+	height: 100%;
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    
+}
+.art-trigger-element{
+	background: black;
+}
+.art_btn_panel{
+	margin-bottom: 7px;
+	button{
+		padding: 0;
+		width: 35px;
+		height: 35px;
+		border: 1px solid rgba(0,0,0,0.4);
+		border-radius: 2px;
+		color: black;
+		cursor: pointer;
+		font-size: 14px;
+		background: white;
+		&:hover{
+			border-color: #5DB96F;
+		background: #5DB96F;
+		color: white;
+		}
+	}
+	button:disabled{
+		padding: 0;
+		width: 35px;
+		height: 35px;
+		border: 1px solid rgba(0,0,0,0.2);
+		border-radius: 2px;
+		color: gray;
+		cursor: pointer;
+		font-size: 14px;
+		&:hover{
+			background: white;
+		}
+	}
+	button.art_active_btn{
+		border-color: #5DB96F;
+		background: #5DB96F;
+		color: white;
+	}
+}
+
+
+.art-main-popup-wrap{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+	z-index: 1231313;
+	display: none;
+}
+.art-popup-wrap{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.art-popup{
+	width: 100%;
+	max-width: 600px;
+	padding: 50px 15px 30px;
+	background: white;
+	position: relative;
+	box-shadow: rgba(0,0,0,0.3);
+	textarea{
+		width: 100%;
+		height: 300px;
+		resize:none;
+		max-height: 40vh !important;
+		min-height: 200px !important;
+		border: 1px solid rgba(0,0,0,0.4);
+		font-size: 14px;
+	}
+	.art-close{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 7px;
+		text-align: right;
+		background: #DC5952;
+		cursor: move;
+		span{
+			display: block;
+			width: 17px;
+			height: 17px;
+			margin-left: auto;
+			position: relative;
+			cursor: pointer;
+			transition: 0.2s;
+			transform-origin: 50%;
+		}
+		span:hover{
+			transform: scale(1.1);
+		}
+		span:before{
+			content: '';
+			width: 118%;
+			height: 3px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: white;
+			transition: 0.3s;
+			transform-origin: 0;
+			border-radius: 2px;
+			transform: rotate(45deg);
+		}
+		span:after{
+			content: '';
+			width: 118%;
+			height: 3px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: white;
+			transition: 0.3s;
+			transform-origin: 0;
+			border-radius: 2px;
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.art-editor-panel{
+	border: 1px solid #ED4834;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 123123123;
+	display: none;
+	.art-instruments{
+		min-width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		.art-edit-text{
+			background: #2bc06a;
+			display: none;
+		}
+		.art-delete-text{
+			background: red;
+			img{
+				filter: brightness(3);
+			}
+		}
+		.art-find-img-text{
+			background: blue;
+			display: none;
+		}
+		.art-colo{
+			margin: 0 5px -10px;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			cursor: pointer;
+			transition: 0.2s;
+			color: white;
+			font-size: 17px;
+			&:hover{
+				transform: scale(1.1);
+			}
+			img{
+				object-fit: contain;
+				max-width: 60%;
+				max-height: 60%;
+			}
+		}
+	}
+}
+.can-drag-me{
+	filter: opacity(50%);
+}
+.trumbowyg-modal{
+	z-index: 1231231231312!important;
+}
+
+.trumbowyg-box, .trumbowyg-editor{
+	margin: 0!important;
+}
+.art-btn-wrap{
+	margin-top: 15px;
+	text-align: right;
+}
+
+.trumbowyg-box .trumbowyg-editor{
+	max-height: 40vh!important;
+	min-height: 200px!important;
+}
+.trumbowyg-editor p{
+	margin: 7px 0;
+}
+.art-drag{
+	position: absolute;
+	top: 0;
+	width: calc(100% - 30px);
+	left: 0;
+	height: 31px;
+}
+
+
